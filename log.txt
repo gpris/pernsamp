@@ -1,0 +1,69 @@
+npx create-react-app pernsamp
+Need to install the following packages:
+  create-react-app@5.0.1
+Ok to proceed? (y) y
+npm WARN deprecated tar@2.2.2: This version of tar is no longer supported, and will not receive security updates. Please upgrade asap.
+
+Creating a new React app in /home/gpris/source/repos/pernsample/pernsamp.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1453 packages in 1m
+
+241 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 69 packages, and changed 1 package in 9s
+
+245 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+
+removed 1 package, and audited 1522 packages in 4s
+
+245 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Created git commit.
+
+Success! Created pernsamp at /home/gpris/source/repos/pernsample/pernsamp
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd pernsamp
+  npm start
+
+Happy hacking!
+npm notice 
+npm notice New major version of npm available! 8.19.4 -> 10.1.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.1.0
+npm notice Run npm install -g npm@10.1.0 to update!
+npm notice 
