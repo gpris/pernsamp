@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 
-const EditStudent = ({names}) => {
-    const [name, setName] = useState("");
+const EditStudent = ({ename}) => {
+    const [name, setName] = useState(ename.name);
     
     const updateStudent = async e => {
         e.preventDefault();
@@ -25,9 +25,10 @@ const EditStudent = ({names}) => {
         <Fragment>
         <button
           type="button"
-          className="btn btn-warning"
-          data-bs-toggle="modal"
-          data-bs-target={`#id${name.id}`}>
+          class="btn btn-warning"
+          data-toggle="modal"
+          data-target={`#id${name.id}`}
+        >
           Edit
         </button>
   
@@ -35,17 +36,17 @@ const EditStudent = ({names}) => {
           id = id10
         */}
         <div
-          className="modal"
-          id={`id${name.id}`}
+          class="modal"
+          id={`id${names.id}`}
           onClick={() => setName(name.name)}
         >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h4 className="modal-title">Edit Student</h4>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Edit Todo</h4>
                 <button
                   type="button"
-                  className="close"
+                  class="close"
                   data-dismiss="modal"
                   onClick={() => setName(name.name)}
                 >
@@ -53,19 +54,19 @@ const EditStudent = ({names}) => {
                 </button>
               </div>
   
-              <div className="modal-body">
+              <div class="modal-body">
                 <input
                   type="text"
                   className="form-control"
-                //   value={name.name}
-                //   onChange={e => setName(e.target.value)}
+                  value={names}
+                  onChange={e => setName(e.target.value)}
                 />
               </div>
   
-              <div className="modal-footer">
+              <div class="modal-footer">
                 <button
                   type="button"
-                  className="btn btn-warning"
+                  class="btn btn-warning"
                   data-dismiss="modal"
                   onClick={e => updateStudent(e)}
                 >
@@ -73,7 +74,7 @@ const EditStudent = ({names}) => {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-danger"
+                  class="btn btn-danger"
                   data-dismiss="modal"
                   onClick={() => setName(name.name)}
                 >

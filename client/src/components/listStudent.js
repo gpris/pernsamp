@@ -22,7 +22,7 @@ const ListStudents = () => {
         try {
             const response = await fetch("http://localhost:3033/students2");
             const jsonData = await response.json();
-            // console.log(jsonData);
+            console.log(jsonData);
             setNames(jsonData);
         } catch (err) {
             console.error(err.message);
@@ -43,10 +43,10 @@ const ListStudents = () => {
       </tr>
     </thead>
     <tbody>
-      {names.map(name =>(
-        <tr key={name.id}>
-            <td>{name.name}</td>
-            <td><EditStudent name = {name} /></td>
+      {names.map(names =>(
+        <tr key={names.id}>
+            <td>{names.name}</td>
+            <td><EditStudent name = {names} /></td>
             <td><button className="btn btn-danger" onClick={()=> deleteStudent(names.id)}>Delete</button></td>
         </tr>
       ))}
