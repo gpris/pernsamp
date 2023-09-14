@@ -1,20 +1,28 @@
 import React, { Fragment, useState } from "react";
 
-const EditStudent = ({ename}) => {
-    const [name, setName] = useState(ename.name);
-    
-    const updateStudent = async e => {
+const EditStudent = ({names}) => {
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+    const [name, setName] = useState([]);
+    var tempid = names.id;
+    // console.log('EditStudent:updateStudent:tempid:'+tempid);
+
+    const updateStudent = async (e) => {
         e.preventDefault();
         try {
           const body = { name };
           const response = await fetch(
-            `http://localhost:3033/students2/${name.id}`,
+            `http://localhost:3033/students2/${tempid}`,
             {
               method: "PUT",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(body)
             }
           );
+
+          console.log('EditStudent:updateStudent:body:'+body);
+
           window.location = "/";
         } catch (err) {
           console.error(err.message);
@@ -25,9 +33,9 @@ const EditStudent = ({ename}) => {
         <Fragment>
         <button
           type="button"
-          class="btn btn-warning"
-          data-toggle="modal"
-          data-target={`#id${name.id}`}
+          className="btn btn-warning"
+          data-bs-toggle="modal"
+          data-bs-target={`#id${tempid}`}
         >
           Edit
         </button>
@@ -36,37 +44,37 @@ const EditStudent = ({ename}) => {
           id = id10
         */}
         <div
-          class="modal"
-          id={`id${names.id}`}
-          onClick={() => setName(name.name)}
+          className="modal"
+          id={`id${tempid}`}
+          onClick={() => setName({names})}
         >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Edit Todo</h4>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h4 className="modal-title">Edit Student</h4>
                 <button
                   type="button"
-                  class="close"
+                  className="close"
                   data-dismiss="modal"
-                  onClick={() => setName(name.name)}
+                  onClick={() => setName({names})}
                 >
                   &times;
                 </button>
               </div>
   
-              <div class="modal-body">
+              <div className="modal-body">
                 <input
                   type="text"
                   className="form-control"
-                  value={names}
+                  defaultValue={names.name}
                   onChange={e => setName(e.target.value)}
                 />
               </div>
   
-              <div class="modal-footer">
+              <div className="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-warning"
+                  className="btn btn-warning"
                   data-dismiss="modal"
                   onClick={e => updateStudent(e)}
                 >
@@ -74,9 +82,9 @@ const EditStudent = ({ename}) => {
                 </button>
                 <button
                   type="button"
-                  class="btn btn-danger"
+                  className="btn btn-danger"
                   data-dismiss="modal"
-                  onClick={() => setName(name.name)}
+                  onClick={() => setName(names.name)}
                 >
                   Close
                 </button>
