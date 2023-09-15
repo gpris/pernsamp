@@ -46,7 +46,7 @@ const ListStudents = () => {
       {names.map(names =>(
         <tr key={names.id}>
             <td>{names.name}</td>
-            <td><EditStudent name = {names} /></td>
+            <td><EditStudent names = {names} /></td>
             <td><button className="btn btn-danger" onClick={()=> deleteStudent(names.id)}>Delete</button></td>
         </tr>
       ))}

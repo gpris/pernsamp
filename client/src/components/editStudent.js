@@ -1,12 +1,9 @@
 import React, { Fragment, useState } from "react";
 
 const EditStudent = ({names}) => {
-  // const [show, setShow] = useState(false);
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
     const [name, setName] = useState([]);
-    var tempid = names.id;
-    // console.log('EditStudent:updateStudent:tempid:'+tempid);
+    
+    const tempid = names.id;
 
     const updateStudent = async (e) => {
         e.preventDefault();
@@ -46,7 +43,7 @@ const EditStudent = ({names}) => {
         <div
           className="modal"
           id={`id${tempid}`}
-          onClick={() => setName({names})}
+          onClick={() => setName(names.name)}
         >
           <div className="modal-dialog">
             <div className="modal-content">
@@ -55,8 +52,8 @@ const EditStudent = ({names}) => {
                 <button
                   type="button"
                   className="close"
-                  data-dismiss="modal"
-                  onClick={() => setName({names})}
+                  data-bs-dismiss="modal"
+                  onClick={() => setName(names.name)}
                 >
                   &times;
                 </button>
@@ -75,7 +72,7 @@ const EditStudent = ({names}) => {
                 <button
                   type="button"
                   className="btn btn-warning"
-                  data-dismiss="modal"
+                  data-bs-dismiss="modal"
                   onClick={e => updateStudent(e)}
                 >
                   Edit
@@ -83,7 +80,7 @@ const EditStudent = ({names}) => {
                 <button
                   type="button"
                   className="btn btn-danger"
-                  data-dismiss="modal"
+                  data-bs-dismiss="modal"
                   onClick={() => setName(names.name)}
                 >
                   Close
