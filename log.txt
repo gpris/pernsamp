@@ -1,3 +1,21 @@
+sudo apt install nodejs
+sudo apt install npm
+---TOO OLD---
+
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install nodejs
+-- INSTALL LATEST --
+
+
+sudo apt install docker.io
+systemctl start docker
+systemctl enable docker
+
+docker pull postgres in terminal (download and run)
+$> docker run -d -p 5432:5432 --name pgsql -e POSTGRES_PASSWORD=1234 postgres
+
+
+
 npx create-react-app pernsamp
 Need to install the following packages:
   create-react-app@5.0.1
@@ -67,3 +85,7 @@ npm notice New major version of npm available! 8.19.4 -> 10.1.0
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.1.0
 npm notice Run npm install -g npm@10.1.0 to update!
 npm notice 
+
+
+230910 It works but not working after github push. 
+
